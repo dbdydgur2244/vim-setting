@@ -4,16 +4,16 @@ filetype off
 " set the runtime path to include Vundle and initialize
 call plug#begin('~/.vim/plugged')
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'othree/html5.vim'
-Plugin 'kchmck/vim-coffee-script'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/syntastic'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'othree/html5.vim'
+Plug 'kchmck/vim-coffee-script'
 Plug 'vim-scripts/L9'
 
 call plug#end()
@@ -64,8 +64,6 @@ set cindent " C 프로그래밍용 자동 들여쓰기
 set smartindent " 스마트한 들여쓰기
 
 
-" 백업 관련 옵션
-set writebackup=on
 
 
 " 자동완성 관련 옵션
@@ -74,7 +72,7 @@ set wmnu " tab 자동완성시 가능한 목록을 보여줌
 
 " 파일/디렉토리명 자동완성 할 때 무시할 패턴
 set wildignore=*.o,*.bak,.*.swap,*.pyc
-set wildmenu=on " command-line 자동 완성 기능
+set wildmenu " command-line 자동 완성 기능
 
 " 화면 넘어가는 경우 한 라인을 여러줄로 표시
 set wrap
@@ -95,8 +93,6 @@ set shiftwidth=4 " 자동 들여쓰기 4칸
 " 파일 인코딩 관련
 scriptencoding utf-8
 set encoding=utf-8
-set fileencoding=utf-8,euc-kr " 파일저장인코딩 
-set tenc=utf-8      " 터미널 인코딩
 
 
 " 검색 관련 옵션
