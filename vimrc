@@ -15,27 +15,31 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'othree/html5.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'vim-scripts/L9'
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 filetype indent on "  파일 종류에 따른 구문강조
+filetype plugin on
+
 
 let mapleader = ","
 
 
-colorscheme office-dark
-let g:office_dark_LineNr = 'off'
-let g:office_light_LineNr = 'off'
+" colorscheme office-dark
+" let g:office_dark_CursorLineNr = 'off'
+" let g:office_dark_LineNr = 'off'
 
 " colorscheme forgotten-dark
 " let g:forgotten_dark_LineNr = 'off'
-" let g:forgotten_light_LineNr = 'off'
+" let g:forgotten_dark_LineNr = 'off'
 
 
-" set background=dark
-" set termguicolors
-" colorscheme material-monokai
-" let g:materialmonokai_subtle_spell=1
-" let g:airline_theme='materialmonokai'
+set background=dark
+set t_8f=^[[38;2;%lu;%lu;%lum
+set t_8b=^[[48;2;%lu;%lu;%lum
+colorscheme material-monokai
+let g:materialmonokai_subtle_spell=1
+let g:airline_theme='materialmonokai'
 
 
 " colorscheme vrunchbang-dark
@@ -210,7 +214,7 @@ nnoremap <F2> :w
 
 " buffer 관련 map
 noremap <silent> <C-left> :bprev<CR>
-noremap <silent> <C-h> :bprev<CR>
+noremap <silent> <C-h> :bprev<C<F2>R>
 noremap <silent> <C-right> :bnext<CR>
 noremap <silent> <C-l> :bnext<CR>
 
