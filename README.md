@@ -27,7 +27,7 @@ git clone https://github.com/dbdydgur2244/vim-setting .vim
 
 고로 다음과 사진과 같이 Window-Colours에서 색깔들을 바꿔주어야함.
 
-![screensh](./img/putty-setting.png){: .center-image}
+![screensh](https://github.com/dbdydgur2244/vim-setting/blob/master/img/putty-setting.PNG)
 
 다음과 같이 바꾸면 된다. 이는 원하는대로 좀 수정하시길 바람.
 
