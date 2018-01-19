@@ -117,6 +117,18 @@ https://github.com/junegunn/vim-easy-align
 
 
 
+### Indent Guides
+
+Indent Guides는 indent level을 시각화해서 보여주는 plugin이다. vim에서 다음과 같은 명령어로 활성화 또는 비활성화 가능.
+
+```
+:IndentGuidesEnable
+:IndentGuidesDisable
+:IndentGuidesToggle
+```
+
+
+
 ## putty인 경우
 
 기본적으로 putty 색깔은 너무 이쁘지 않다.
