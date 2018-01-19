@@ -4,9 +4,9 @@
 
 ```bash
 cd ~/
-git clone https://github.com/dbdydgur2244/vim-setting
-cd vim-setting
-./install.sh
+git clone https://github.com/dbdydgur2244/vim-setting .vim
+ln -s ~/.vim/vimrc ~/.vimrc
+vim -c ":PlugInstall" -c ":q" -c ":q"
 ```
 
 
@@ -21,7 +21,7 @@ cd vim-setting
 
 ### map과 noremap의 차이
 
-**`map`**과 **`noremap`**은 각각  둘다 **normal** mode, **visual** mode and other modes에서 모두 작동함. 둘의 차이는 **recursive** and **non-recursive**임. 다음과 같이 세팅을 했다고 하자.
+`map`과 `noremap`은 각각  둘다 **normal** mode, **visual** mode and other modes에서 모두 작동함. 둘의 차이는 **recursive** and **non-recursive**임. 다음과 같이 세팅을 했다고 하자.
 
 ```
 :map j gg
@@ -31,7 +31,7 @@ cd vim-setting
 
 그렇다면 `map`의 경우 `Q`, `j` 모두 `gg`로 mapping되어 있을 것이다. 하지만 `noremap`은 `W`는 `j`로 세팅되어 있을 것이다.
 
-**`nnoremap`**의 경우는  `noremap`과 기능은 같지만 **normal** mode에서만 작동한다.
+`nnoremap`의 경우는  `noremap`과 기능은 같지만 **normal** mode에서만 작동한다.
 
 |       명령어       |                  설명                  |
 | :-------------: | :----------------------------------: |
