@@ -8,16 +8,17 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'vim-python/python-syntax'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'othree/html5.vim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'vim-scripts/L9'
 Plug 'scrooloose/nerdcommenter'
+Plug 'junegunn/vim-easy-align'
+" Plug 'scrooloose/syntastic'
 
 call plug#end()
+
 filetype indent on "  파일 종류에 따른 구문강조
 filetype plugin on
 
@@ -107,7 +108,6 @@ set smartcase " 대소문자 있으면 구분
 set incsearch " 키워드 입력시 점진적 검색
 
 
-set visualbell " 키를 잘못눌렀을 때 화면 프레시
 set title " 제목을 표시
 set mouse=a
 set backspace=eol,start,indent "  줄의 끝, 시작, 들여쓰기에서 백스페이스시 이전줄로
@@ -147,40 +147,26 @@ let g:NERDTrimTrailingWhitespace = 1
 map <Leader>cc <plug>NERDComToggleComment
 map <Leader>c<space> <plug>NERDComComment
 
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
 
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
-
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
- 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
- 
-let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
-
-
-" vim-cpp-enhanced-highlight 관련 세팅
-let g:cpp_class_scope_highlight = 1
-let g:cpp_class_decl_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let c_no_curly_error=1
+" " Syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+"
+" let g:syntastic_cpp_compiler = 'g++'
+" let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
+"
+"
+" " vim-cpp-enhanced-highlight 관련 세팅
+" let g:cpp_class_scope_highlight = 1
+" let g:cpp_class_decl_highlight = 1
+" let g:cpp_member_variable_highlight = 1
+" let c_no_curly_error=1
 
 
 " for vim-airline
@@ -193,6 +179,9 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+
+
+" ctrlp
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|public$\|log$\|tmp$\|vendor$',
   \ 'file': '\v\.(exe|so|dll)$'
@@ -210,7 +199,19 @@ let g:html5_microdata_attributes_complete = 0
 let g:html5_aria_attributes_complete = 0
 
 
+" python syntax highlight
+let g:python_highlight_all = 1
+
+
+" Easy-align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 nnoremap <F2> :w
+map <F3> :NERDTreeToggle<cr>
+nnoremap <C-f> :NERDTreeFind<cr>
 
 " buffer 관련 map
 noremap <silent> <C-left> :bprev<CR>
