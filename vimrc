@@ -16,11 +16,13 @@ Plug 'othree/html5.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/syntastic'
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
 
 filetype indent on "  파일 종류에 따른 구문강조
 filetype plugin on
+filetype plugin indent on
 
 
 let mapleader = ","
@@ -212,6 +214,26 @@ let g:python_highlight_all = 1
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+
+" vim-indent_guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
+
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
+" if set background=dark
+" hi IndentGuidesOdd  ctermbg=black
+" hi IndentGuidesEven ctermbg=darkgrey
+
+" if set background=light
+" hi IndentGuidesOdd  ctermbg=white
+" hi IndentGuidesEven ctermbg=lightgrey
+
 
 nnoremap <F2> :w
 map <F3> :NERDTreeToggle<cr>
