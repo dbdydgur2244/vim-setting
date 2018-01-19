@@ -62,7 +62,6 @@ set nolist "
 set textwidth=80
 set ruler
 set number
-set cursorline " 커서가 있는 라인 하이라이팅
 
 
 " indent 관련 옵션 
