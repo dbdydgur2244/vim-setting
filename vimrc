@@ -17,6 +17,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/syntastic'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'junegunn/seoul256.vim'
 
 call plug#end()
 
@@ -37,17 +38,25 @@ let mapleader = ","
 " let g:forgotten_dark_LineNr = 'off'
 
 
-set background=dark
-set t_8f=^[[38;2;%lu;%lu;%lum
-set t_8b=^[[48;2;%lu;%lu;%lum
-colorscheme material-monokai
-let g:materialmonokai_subtle_spell=1
-let g:airline_theme='materialmonokai'
+" set background=dark
+" set t_8f=^[[38;2;%lu;%lu;%lum
+" set t_8b=^[[48;2;%lu;%lu;%lum
+" colorscheme material-monokai
+" let g:materialmonokai_subtle_spell=1
+" let g:airline_theme='materialmonokai'
 
 
 " colorscheme vrunchbang-dark
 " let g:vrunchbang_dark_LineNr = 'off'
 " let g:vrunchbang_light_LineNr = 'off'
+
+
+" seoul256 (dark):
+" "   Range:   233 (darkest) ~ 239 (lightest)
+" "   Default: 237
+let g:seoul256_background = 240
+colo seoul256
+
 
 set t_Co=256
 
@@ -250,3 +259,4 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
+
